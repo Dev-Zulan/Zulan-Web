@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+.nav-container {
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    
+    background-color: #8b3d88;
+    background: linear-gradient(10deg, #d6e417 -50%, #6e0979 37%, #8d00ff 100%);
+}
+
+.nav-title {
+    flex: 1;
+    
+    background-color: #202020;
+
+    text-align: center;
+}
+
+.nav-title h1 {
+    transition: 500ms;
+}
+
+.nav-title h1:hover {
+    transition: 500ms;
+
+    transform: scale(1.2);
+}
+
+.nav-title h1 a {
+    transition: 500ms;
+
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 3.5em;
+    letter-spacing: 0.2em;
+
+    color: #ffffff;
+
+    text-shadow: -5px 0 5px #080808;
+
+}
+
+.nav-title h1 a:hover {
+    transition: 500ms;
+    color: #e755c3;
+    
+    letter-spacing: 0.3em;
+}
+
+.nav-pages {
+    flex: 1;
+    
+    color: #8de669;
+
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.9em;
+}
+
+.nav-pages ul {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-pages ul li {
+    transition: 300ms;
+    margin-bottom: 0.25%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+.nav-pages ul li:hover {
+    transition: 100ms;
+    transform: scale(1.2);
+    font-weight: bolder;
+}
+
+
+.nav-pages ul li:hover::before {
+    content: '> ';
+}
+
+.nav-pages ul li:hover::after {
+    content: ' <';
+
+}
+
+.nav-pages ul li a {
+    color: #ffffff;
+}
+
+@media (max-width: 609px) {
+    .nav-pages {
+        background-image: none !important;
+    }
+
+    .nav-title h1 a {
+        font-size: 2.5em;
+        letter-spacing: 0.15em;
+    }
+    
+    .nav-title h1:hover {
+        transform: scale(1);
+    }
+    
+    .nav-title h1 a:hover {
+        letter-spacing: 0.2em;
+    }
+    
+    .nav-pages ul {
+        transition: 500ms;
+        flex-direction: column;
+        font-size: 0.75em;
+    }
+
+    .nav-pages ul li {
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 957px) {
+    .nav-pages ul {
+        transition: 500ms;
+        font-size: 0.8em;
+    }
+}

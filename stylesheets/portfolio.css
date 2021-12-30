@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.portfolio-section {
+    flex: 1;
+    
+    display: flex;
+    flex-direction: row;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-image: url("../resources/background.png");
+
+    padding-bottom: 5%;
+}
+
+.portfolio-items {
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-content: center;
+
+    margin: 5%;
+}
+
+.portfolio-items div {
+    transition: 500ms;
+
+    background-color: #7c165e;
+    
+    width: 400px;
+    height: 275px;
+
+
+    transform: scale(1.05);
+
+    margin: 15px;
+    margin-right: 17.5px;
+    margin-left: 17.5px;
+
+    justify-self: center;
+    align-self: center;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    font-size: 6.75em;
+
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    color: #f0f8ff;
+}
+
+.portfolio-items div:hover {
+    cursor: pointer;
+
+    transition: 500ms;
+    transform: scale(1.1);
+
+    box-shadow: 0 10px 30px #000000;
+    border-radius: 5px;
+
+    color: #e5d5c0;
+}
+
+@media (max-width: 609px) {
+    .portfolio-items div {
+        width: 375px;
+        height: 250px;
+
+    transform: scale(1);
+
+
+        margin-right: 0;
+        margin-left: 0;
+    }
+}

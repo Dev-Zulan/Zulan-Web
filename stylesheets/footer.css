@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    
+    background-color: #141414;
+
+    color: #f0f8ff;
+}
+
+.footer-sections {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    
+    margin: 2.5%;
+
+    padding: 50px;
+
+    border: dashed 5px #f0f8ff;
+    border-radius: 5px;
+}
+
+.footer-title {
+    flex: 1;
+
+    border-right: solid 1px #ffffff;
+    
+    justify-content: center;
+    
+    font-size: 7.5em;
+    font-family: 'Anton', sans-serif;
+
+    margin-right: 7.5%;
+    padding-right: 20px;
+}
+
+.footer-links {
+    flex: 3;
+
+    display: flex;
+}
+
+.footer-subsection {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.footer-subsection-title {
+    margin-bottom: 25px;
+
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+}
+
+.footer-links a {
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    font-size: 1.25em;
+
+    color: aliceblue;
+
+    text-indent: 10px;
+
+}
+
+.footer-links a:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 957px) {
+    .footer-sections {
+        flex-direction: column;
+
+        margin: 10%;
+    }
+
+    .footer-title {
+        border-right: none;
+        text-align: center;
+
+        margin: 0;
+        margin-bottom: 50px;
+
+        font-size: 5em;
+    }
+}
+
+@media (max-width: 650px) {
+    .footer-links {
+        flex-direction: column;
+
+        text-align: center;
+        text-indent: 0;
+    }
+
+    .footer-subsection {
+        margin-bottom: 50px;
+    }
+}
