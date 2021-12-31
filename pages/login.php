@@ -18,18 +18,18 @@ if(isset($_POST['user_login'])) {
     if($SQL_Statement = $SQL_Handle->prepare("SELECT `user_id`, `user_password` FROM `users` WHERE `user_name`=?")) {
         $SQL_Statement->bind_param('s', $_POST['login_name']);
         $SQL_Statement->execute();
-    }
+    
+        $SQL_Result = $SQL_Statement->get_result();
 
-    $SQL_Result = $SQL_Statement->get_result();
-
-    if(mysqli_num_rows($SQL_Result)) {
-        $SQL_Row = $SQL_Result->fetch_array();
-        
-        if(password_verify($_POST['login_pass'], $SQL_Row['user_password'])) {
-            $_SESSION['user_id'] = $SQL_Row['user_id'];
-            echo '<script>location.replace("../index.php")</script>';
-        } else {
-            echo '<script>location.replace("login.php")</script>';
+        if(mysqli_num_rows($SQL_Result)) {
+            $SQL_Row = $SQL_Result->fetch_array();
+            
+            if(password_verify($_POST['login_pass'], $SQL_Row['user_password'])) {
+                $_SESSION['user_id'] = $SQL_Row['user_id'];
+                echo '<script>location.replace("../index.php")</script>';
+            } else {
+                echo '<script>location.replace("login.php")</script>';
+            }
         }
     }
 }
