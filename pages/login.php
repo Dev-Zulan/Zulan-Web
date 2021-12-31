@@ -4,9 +4,14 @@ session_start();
 include('../modules/authentication.php');
 include('../modules/connection.php');
 
+if(isset($_SESSION['user_id'])) {
+    echo '<script>location.replace("../index.php")</script>';
+    return;
+}
+
 if(isset($_POST['user_login'])) {
     if(!validate_credentials(LOGIN)) {
-        echo '<script>location.replace("error404.php")</script>';
+        // wrong input
         return;
     }
 
@@ -22,12 +27,8 @@ if(isset($_POST['user_login'])) {
         if(password_verify($_POST['login_pass'], $SQL_Row['user_password'])) {
             $_SESSION['user_id'] = $SQL_Row['user_id'];
             echo '<script>location.replace("../index.php")</script>';
-            // echo 'The user ID is: ' . $_SESSION['user_id'] . '<br />';
-            // echo 'Logged in! <br />';
-
-            // echo 
         } else {
-            // echo 'Inputted the wrong password sorry!' . '<br />';
+            echo '<script>location.replace("login.php")</script>';
         }
     }
 }

@@ -10,22 +10,23 @@ session_start();
 <body>
     <?php include('../modules/navbar.php'); ?>
 
-    <div class="user">
-        <div class="user-inner">
-            <div class="user-sidebar">
-                <h1>USER</h1>
+    <div class="admin">
+        <div class="admin-inner">
+            <div class="admin-sidebar">
+                <h1>ADMIN</h1>
                 <ul>
                     <a href=""><li>Dashboard</li></a>
                     <a href=""><li>Messages</li></a>
+                    <a href=""><li>Website Settings</li></a>
+                    <a href=""><li>Edit User</li></a>
+                    <a href=""><li>Statistics</li></a>
+                    <a href=""><li>Resources</li></a>
                     <a href=""><li>Sidebar</li></a>
                     <a href=""><li>Sidebar</li></a>
-                    <a href=""><li>Sidebar</li></a>
-                    <a href=""><li>Sidebar</li></a>
-                    <a href=""><li>Logout</li></a>
 
                 </ul>
             </div>
-            <div class="user-canvas">
+            <div class="admin-canvas">
                 
             </div>
         </div>

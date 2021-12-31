@@ -1,4 +1,64 @@
 .user {
+    background-color: rgb(0, 0, 0);
+}
+
+.user-inner {
+    display: flex;
+    
     height: 1024px;
-    background-color: antiquewhite;    
+
+    background-color: #dec0ff;
+    margin: 0.5%;
+
+}
+
+.user-sidebar {
+    flex: 1;
+
+    background-color: #1a1a1a;
+    
+    border-right: black solid 15px;
+
+    color: white
+}
+
+.user-canvas {
+    flex: 3;
+    background-color: #ffffef;
+}
+
+.user-sidebar h1 {
+    padding: 10px 0 10px 0;
+
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4em;
+    letter-spacing: 10px;
+    
+    text-align: center;
+}
+
+.user-sidebar ul {
+    margin: 5% 0 5% 0;
+}
+
+.user-sidebar ul li {
+    background-color: #1d1d1d;
+
+    margin: 7.5px 0 7.5px 0;
+
+    color: white;
+    
+    font-family: 'Cairo', sans-serif;
+    font-size: 2em;
+
+    border-right: #ff6347 solid 10px;
+
+    padding-left: 25px;
+}
+
+.user-sidebar ul li:hover {
+    border-right: #bfff47 solid 10px;
+    
+    color: beige;
+    font-weight: bold;
 }

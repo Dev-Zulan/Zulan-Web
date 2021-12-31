@@ -5,24 +5,41 @@ session_start();
 include('../modules/authentication.php');
 include('../modules/connection.php');
 
+if(isset($_SESSION['user_id'])) {
+    echo '<script>location.replace("../index.php")</script>';
+    return;
+}
+
 if(isset($_POST['user_register'])) {
     if(!validate_credentials(REGISTER)) {
-        echo '<script>location.replace("error404.php")</script>';
+        // wrong input
         return;
     }
 
-    $SQL_Statement = $SQL_Handle->prepare("SELECT * FROM `users` WHERE `user_name`=?");
-    $SQL_Statement->bind_param('s', $_POST['register_name']);
+    $SQL_Statement = $SQL_Handle->prepare("SELECT `user_name` FROM `users` WHERE `user_name`=?");
+    $SQL_Statement->bind_param('s', strtolower($_POST['register_name']));
     $SQL_Statement->execute();
 
     $SQL_Result = $SQL_Statement->get_result();
 
-    $temp = $_POST['register_pass'];
-    $temp_hash = password_hash($temp, PASSWORD_DEFAULT);
+    if(mysqli_num_rows($SQL_Result)) {
+        echo '<script>location.replace("register.php")</script>';
+    } else {
+        $SQL_Statement = $SQL_Handle->prepare("INSERT INTO `users`(`user_name`, `user_password`, `user_ip`) VALUES(?, ?, ?);");
+        $SQL_Statement->bind_param('sss', $_POST['register_name'], password_hash($_POST['register_pass'], PASSWORD_DEFAULT), $_SERVER['REMOTE_ADDR']);
+        $SQL_Statement->execute();
 
-    $SQL_Statement = $SQL_Handle->prepare("INSERT INTO `users`(`user_name`, `user_password`, `user_ip`) VALUES(?, ?, ?);");
-    $SQL_Statement->bind_param('sss', $_POST['register_name'], $temp_hash, $_SERVER['REMOTE_ADDR']);
-    $SQL_Statement->execute();
+        $SQL_InsertID = $SQL_Statement->insert_id;
+
+        if(strtolower($_POST['register_name']) == "zulan" or strtolower($_POST['register_name']) == "admin") {
+            $SQL_Statement = $SQL_Handle->prepare("INSERT INTO `admins`(`user_id`) VALUES(?);");
+            $SQL_Statement->bind_param('i', $SQL_InsertID);
+            $SQL_Statement->execute();
+        }
+    
+        echo '<script>location.replace("../index.php")</script>';
+    }
+
 }
 
 ?>
@@ -34,7 +51,6 @@ if(isset($_POST['user_register'])) {
     <?php
 
     include('../modules/navbar.php');
-
 
     ?>
 

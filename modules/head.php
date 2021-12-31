@@ -14,10 +14,11 @@ $web_name = "Zulan";
 
     <link rel="stylesheet" href="../stylesheets/portfolio.css??<?=time()?>">
     <link rel="stylesheet" href="../stylesheets/aboutme.css??<?=time()?>">
-    <link rel="stylesheet" href="../stylesheets/user.css??<?=time()?>">
     
     <link rel="stylesheet" href="../stylesheets/services.css??<?=time()?>">
     <link rel="stylesheet" href="../stylesheets/authentication.css??<?=time()?>">
+    <link rel="stylesheet" href="../stylesheets/user.css??<?=time()?>">
+    <link rel="stylesheet" href="../stylesheets/admin.css??<?=time()?>">
     
     <link rel="stylesheet" href="../stylesheets/error.css??<?=time()?>">
 
@@ -28,4 +29,6 @@ $web_name = "Zulan";
     echo "<title>" . $web_name . " | " . $page_name . "</title>";
 
     ?>
+
+    <link rel="icon" type="image/x-icon" href="/resources/favicon.png">
 </head>

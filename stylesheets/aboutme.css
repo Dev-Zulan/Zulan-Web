@@ -56,11 +56,16 @@
         justify-content: center;
 
         text-align: center;
+
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+
     }
     
     .aboutme-content {
-        margin-left: 5%;
         text-align: center;
+
+        margin-left: 5%;
     }
 
     .aboutme-content img {

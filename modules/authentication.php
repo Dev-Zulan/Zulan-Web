@@ -4,7 +4,7 @@ define('REGISTER', 1);
 define('LOGIN', 2);
 
 $auth_type = array(
-    array("Register Your Account", "REGISTER"),
+    array("Register an Account", "REGISTER"),
     array("Login Your Account", "LOGIN"),
 );
 
