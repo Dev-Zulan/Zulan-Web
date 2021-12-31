@@ -46,22 +46,25 @@ $nav_pages = array(
 include('connection.php');
 
 if(isset($_SESSION['user_id'])) {
+    echo '<script>
+            document.getElementById("auth-page").style.display = "none";
+            document.getElementById("admin-page").style.display = "none";
+            document.getElementById("user-page").style.display = "block";
+        </script>';
+    
+    $SQL_Result = NULL;
+
     if($SQL_Statement = $SQL_Handle->prepare("SELECT `user_id` FROM `admins` WHERE `user_id`=?")) {
         $SQL_Statement->bind_param('d', $_SESSION['user_id']);
         $SQL_Statement->execute();
     
         $SQL_Result = $SQL_Statement->get_result();
-
+    }
+    
+    if(mysqli_num_rows($SQL_Result)) {
         echo '<script>
-                document.getElementById("auth-page").style.display = "none";
-                document.getElementById("admin-page").style.display = "none";
-                document.getElementById("user-page").style.display = "block";
+                document.getElementById("admin-page").style.display = "block";
             </script>';
-        if(mysqli_num_rows($SQL_Result)) {
-            echo '<script>
-                    document.getElementById("admin-page").style.display = "block";
-                </script>';
-        }
     }
 } else {
     echo '<script>
