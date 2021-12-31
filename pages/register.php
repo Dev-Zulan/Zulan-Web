@@ -41,6 +41,8 @@ if(isset($_POST['user_register'])) {
         
             echo '<script>location.replace("../index.php")</script>';
         }
+    } else {
+        echo 'test';
     }
 }
 
