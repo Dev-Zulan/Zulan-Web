@@ -1,41 +1,62 @@
 <?php
+class NavBar {
+    public $title;
+    function __construct($title) {
+        $this->title = $title;
+    }
 
-$nav_pages = array(
-    array("HOME", "../index.php"),
-    array("SERVICES", "../pages/services.php"),
-    array("CONTACTS", "../pages/contacts.php"),
-    array("LOGIN/REGISTER", "../pages/login.php"),
-    array("USER", "../pages/user.php"),
-    array("ADMIN", "../pages/admin.php"),
-);
+    function get_title() {
+        return $this->title;
+    }
+}
+
+class NavPages {
+    public
+        $page,
+        $path,
+        $id;
+    
+    function __construct($page, $path, $id) {
+        $this->page = $page;
+        $this->path = $path;
+        $this->id = $id;
+    }
+
+    function get_page() {
+        return $this->page;
+    }
+
+    function get_path() {
+        return $this->path;
+    }
+
+    function get_id() {
+        return $this->id;
+    }
+}
+
+$NavBar = new NavBar("Zulan");
+
+$NavPages[] = new NavPages("HOME", "../index.php", "");
+$NavPages[] = new NavPages("SERVICES", "../pages/services.php", "");
+$NavPages[] = new NavPages("CONTACTS", "../pages/contacts.php", "");
+$NavPages[] = new NavPages("LOGIN/REGISTER", "../pages/login.php", "auth-page");
+$NavPages[] = new NavPages("USER", "../pages/user.php", "user-page");
+$NavPages[] = new NavPages("ADMIN", "../pages/admin.php", "admin-page");
 
 ?>
 
 <nav class="nav-container">
     <div class="nav-title">
-        <?php echo '<h1><a href="">' . strtoupper($web_name) . '</a></h1>'; ?>
+        <?php echo '<h1><a href="">' . strtoupper($NavBar->get_title()) . '</a></h1>'; ?>
     </div>
     <div class="nav-pages">
         <?php
 
         echo '<ul>';
-
-        foreach ($nav_pages as $x=>$i) {
-            if($nav_pages[$x][0] == "LOGIN/REGISTER") {
-                echo '<li id="auth-page"><a href="' . $nav_pages[$x][1] . '">' . $nav_pages[$x][0] . '</a></li>';
-                continue;
-            }
-            if($nav_pages[$x][0] == "USER") {
-                echo '<li id="user-page"><a href="' . $nav_pages[$x][1] . '">' . $nav_pages[$x][0] . '</a></li>';
-                continue;
-            }
-            if($nav_pages[$x][0] == "ADMIN") {
-                echo '<li id="admin-page"><a href="' . $nav_pages[$x][1] . '">' . $nav_pages[$x][0] . '</a></li>';
-                continue;
-            }
-            echo '<li><a href="' . $nav_pages[$x][1] . '">' . $nav_pages[$x][0] . '</a></li>';
+        foreach($NavPages as $x => $i) {
+            echo '<li id="' . $NavPages[$x]->get_id() . '"><a href="' . $NavPages[$x]->get_path() . '">' . $NavPages[$x]->get_page() . '</a></li>';
         }
-
         echo '</ul>';
 
         ?>
