@@ -48,7 +48,7 @@ $NavPages[] = new NavPages("ADMIN", "../pages/admin.php", "admin-page");
 
 <nav class="nav-container">
     <div class="nav-title">
-        <?php echo '<h1><a href="">' . strtoupper($NavBar->get_title()) . '</a></h1>'; ?>
+        <?='<h1><a href="">' . strtoupper($NavBar->get_title()) . '</a></h1>'; ?>
     </div>
     <div class="nav-pages">
         <?php

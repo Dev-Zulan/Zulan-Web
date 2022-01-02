@@ -2,11 +2,16 @@
 
 session_start();
 
+if(!isset($_SESSION['user_id'])) {
+    echo '<script>location.replace("../index.php")</script>';
+    return;
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <?php $page_name = "Contacts"; include('../modules/head.php') ?>
+    <?php $page_name = "User"; include('../modules/head.php') ?>
 <body>
     <?php include('../modules/navbar.php'); ?>
 

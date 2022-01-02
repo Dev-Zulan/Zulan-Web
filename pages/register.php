@@ -56,7 +56,7 @@ if(isset($_POST['user_register'])) {
     <div class="authentication">
         <div class="auth-box">
             <div class="auth-title">
-                <?php echo strtoupper($auth_type[REGISTER-1][0]) ?>
+                <?=strtoupper($auth_type[REGISTER-1][0]) ?>
             </div>
             <div class="auth-description">
             </div>
@@ -64,7 +64,7 @@ if(isset($_POST['user_register'])) {
                 <input type="text" onfocus="this.value=''" name="register_name" value="Username" autocomplete="off"><br />
                 <input type="password" onfocus="this.value=''" name="register_pass" value="Password" autocomplete="off"><br />
                 <input type="password" onfocus="this.value=''" name="register_confirm_pass" value="Password" autocomplete="off"><br />
-                <button type="submit" name="user_register"><?php echo $auth_type[REGISTER-1][1] ?></button><br />
+                <button type="submit" name="user_register"><?=$auth_type[REGISTER-1][1] ?></button><br />
                 <a href="login.php">Already Registered? Login your account.</a>
             </form>
         </div>

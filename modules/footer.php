@@ -1,6 +1,6 @@
 <div class="footer">
     <div class="footer-sections">
-        <div class="footer-title"><?php echo strtoupper($web_name) ?></div>
+        <div class="footer-title">ZULAN</div>
         <div class="footer-links">
             <div class="footer-subsection">
                 <div class="footer-subsection-title">My Game Servers</div>

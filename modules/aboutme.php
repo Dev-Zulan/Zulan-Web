@@ -46,43 +46,6 @@ $Me->set_aboutme('
 </p>
 ');
 
-class Website {
-    public
-        $aboutweb;
-    
-    function __construct($aboutweb) {
-        $this->aboutweb = $aboutweb;
-    }
-
-    function get_aboutweb() {
-        return $this->aboutweb;
-    }
-    
-    function set_aboutweb($aboutweb) {
-        $this->aboutweb = $aboutweb;
-    }
-}
-
-$Website = new Website("");
-
-$Website->set_aboutweb('
-<p>
-    This website will be used as my personal website that contains my portfolio and other stuffs. I started making the website on December 9, 2021 for a project in my school which I used an opportunity to make it my own personal website.
-</p>
-<p>
-    I rented a domain name for it on December 15, 2021 (zulan.best) just for general purposes.
-</p>
-<p>
-    The website\'s source is available publicly in its repository on my GitHub account at <a href="https://github.com/Dev-Zulan/Zulan-Web" target="_blank">[https://github.com/Dev-Zulan/Zulan-Web]. </a>
-</p>
-<p>
-    This is the very first website I "actually" made and I\'m quite happy of the results even if it\'s not fully finished yet. I can admit that the production of the website is slow since I am just coding it on my leisure.
-</p>
-<p>
-    After I passed it on the deadline, since the project is open-source, I might let other people make pull requests so I can make it a fully open-source project. 
-</p>
-');
-
 ?>
 
 <div class="aboutme">
@@ -92,14 +55,6 @@ $Website->set_aboutweb('
             <h1 id="aboutme-title">About Me</h1>
             <?php
                 echo $Me->get_aboutme();
-            ?>
-        </div>
-    </div>
-    <div class="aboutme-inner">
-        <div class="aboutme-content">
-            <h1 id="aboutme-title">Website</h1>
-            <?php
-                echo $Website->get_aboutweb();
             ?>
         </div>
     </div>

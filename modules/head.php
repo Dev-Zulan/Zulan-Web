@@ -1,6 +1,6 @@
 <?php
 
-$web_name = "Zulan";
+$web_name = "ulan";
 
 ?>
 
@@ -30,5 +30,5 @@ $web_name = "Zulan";
 
     ?>
 
-    <link rel="icon" type="image/x-icon" href="/resources/favicon.png">
+    <link rel="icon" type="image/x-icon" href="resources/favicon.png??<?=time()?>">
 </head>

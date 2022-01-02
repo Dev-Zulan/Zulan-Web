@@ -2,11 +2,20 @@
 
 session_start();
 
+class AdminSidebar {
+
+}
+
+if(!isset($_SESSION['user_id'])) {
+    echo '<script>location.replace("../index.php")</script>';
+    return;
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <?php $page_name = "Contacts"; include('../modules/head.php') ?>
+    <?php $page_name = "Admin"; include('../modules/head.php') ?>
 <body>
     <?php include('../modules/navbar.php'); ?>
 
@@ -15,14 +24,14 @@ session_start();
             <div class="admin-sidebar">
                 <h1>ADMIN</h1>
                 <ul>
-                    <a href=""><li>Dashboard</li></a>
-                    <a href=""><li>Messages</li></a>
-                    <a href=""><li>Website Settings</li></a>
-                    <a href=""><li>Edit User</li></a>
-                    <a href=""><li>Statistics</li></a>
-                    <a href=""><li>Resources</li></a>
-                    <a href=""><li>Sidebar</li></a>
-                    <a href=""><li>Sidebar</li></a>
+                    <li>Dashboard</li>
+                    <li>Messages</li>
+                    <li>Website Settings</li>
+                    <li>Edit User</li>
+                    <li>Statistics</li>
+                    <li>Resources</li>
+                    <li>Sidebar</li>
+                    <li>Sidebar</li>
 
                 </ul>
             </div>

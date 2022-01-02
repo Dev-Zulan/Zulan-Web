@@ -50,14 +50,14 @@ if(isset($_POST['user_login'])) {
     <div class="authentication">
         <div class="auth-box">
             <div class="auth-title">
-                <?php echo strtoupper($auth_type[LOGIN-1][0]) ?>
+                <?=strtoupper($auth_type[LOGIN-1][0]) ?>
             </div>
             <div class="auth-description">
             </div>
             <form action="login.php" method="post">
                 <input type="text" onfocus="this.value=''" name="login_name" value="Username" autocomplete="off"><br />
                 <input type="password" onfocus="this.value=''" name="login_pass" value="Password" autocomplete="off"><br />
-                <button type="submit" name="user_login"><?php echo $auth_type[LOGIN-1][1] ?></button><br />
+                <button type="submit" name="user_login"><?=$auth_type[LOGIN-1][1] ?></button><br />
                 <a href="register.php">New user? Register now.</a>
             </form>
         </div>
