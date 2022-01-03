@@ -1,2 +1,2 @@
 resources/mysql/
-modules/connection.php
+.htaccess
