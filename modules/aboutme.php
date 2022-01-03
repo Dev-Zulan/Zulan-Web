@@ -1,6 +1,6 @@
 <?php
 
-include("../modules/connection.php");
+include("connection.php");
 
 class Me {
     public
