@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+
 .user {
     background-color: rgb(0, 0, 0);
 }
@@ -5,9 +7,7 @@
 .user-inner {
     display: flex;
     
-    height: 1024px;
-
-    background-color: #dec0ff;
+    background-color: rgb(222, 192, 255);
     margin: 0.5%;
 
 }
@@ -15,16 +15,20 @@
 .user-sidebar {
     flex: 1;
 
-    background-color: #1a1a1a;
+    background-color: rgb(26, 26, 26);
     
-    border-right: black solid 15px;
+    border-right: rgb(0, 0, 0) solid 15px;
 
-    color: white
+    color: rgb(255, 255, 255);
 }
 
 .user-canvas {
-    flex: 3;
-    background-color: #ffffef;
+    flex: 4;
+    background-color: rgb(255, 255, 239);
+}
+
+.user-canvas-inner {
+    margin: 2.5%;
 }
 
 .user-sidebar h1 {
@@ -42,23 +46,25 @@
 }
 
 .user-sidebar ul li {
-    background-color: #1d1d1d;
+    background-color: rgb(29, 29, 29);
 
     margin: 7.5px 0 7.5px 0;
 
-    color: white;
+    color: rgb(255, 255, 255);
     
     font-family: 'Cairo', sans-serif;
     font-size: 2em;
 
-    border-right: #ff6347 solid 10px;
+    border-right: rgb(255, 99, 71) solid 10px;
 
     padding-left: 25px;
 }
 
 .user-sidebar ul li:hover {
-    border-right: #bfff47 solid 10px;
+    border-right: rgb(191, 255, 71) solid 10px;
     
-    color: beige;
+    color: rgb(245, 245, 220);
     font-weight: bold;
+
+    cursor: pointer;
 }

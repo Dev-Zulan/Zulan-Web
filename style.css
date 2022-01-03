@@ -11,13 +11,13 @@
 }
 
 ::selection {
-    color: #ffffff;
-    background: #ffa500;
+    color: rgb(255, 255, 255);
+    background: rgb(255, 165, 0);
 }
 
 p::selection {
-    color: #000000;
-    background: #ffa500;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 165, 0);
 }
 
 body {
@@ -26,11 +26,11 @@ body {
     
     height: 100%;
     
-    background-color: #663399;
+    background-color: rgb(102, 51, 153);
 }
 
 a {
-    color: #0f0f0f;
+    color: rgb(15, 15, 15);
     text-decoration: none;
 }
 

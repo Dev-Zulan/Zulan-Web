@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+
 .admin {
     background-color: rgb(0, 0, 0);
 }
@@ -5,9 +7,7 @@
 .admin-inner {
     display: flex;
     
-    height: 1024px;
-
-    background-color: #dec0ff;
+    background-color: rgb(222, 192, 255);
     margin: 0.5%;
 
 }
@@ -15,16 +15,20 @@
 .admin-sidebar {
     flex: 1;
 
-    background-color: #1a1a1a;
+    background-color: rgb(26, 26, 26);
     
-    border-right: black solid 15px;
+    border-right: rgb(0, 0, 0) solid 15px;
 
-    color: white
+    color: rgb(255, 255, 255);
 }
 
 .admin-canvas {
-    flex: 3;
-    background-color: #ffffef;
+    flex: 4;
+    background-color: rgb(255, 255, 239);
+}
+
+.admin-canvas-inner {
+    margin: 2.5%;
 }
 
 .admin-sidebar h1 {
@@ -42,25 +46,125 @@
 }
 
 .admin-sidebar ul li {
-    background-color: #1d1d1d;
+    background-color: rgb(29, 29, 29);
 
     margin: 7.5px 0 7.5px 0;
 
-    color: white;
+    color: rgb(255, 255, 255);
     
     font-family: 'Cairo', sans-serif;
     font-size: 2em;
 
-    border-right: #ff6347 solid 10px;
+    border-right: rgb(255, 99, 71) solid 10px;
 
     padding-left: 25px;
 }
 
 .admin-sidebar ul li:hover {
-    border-right: #bfff47 solid 10px;
+    border-right: rgb(191, 255, 71) solid 10px;
     
-    color: beige;
+    color: rgb(245, 245, 220);
     font-weight: bold;
 
     cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.admin-dashboard-header {
+    display: flex;
+
+    flex-direction: row;     
+    align-items: center;
+}
+
+#admin-dashboard-header-title {
+    flex: 1;
+    color: rgb(0, 0, 0);
+    
+    font-size: 4em;
+    font-family: 'Bebas Neue';
+
+    letter-spacing: 7.5px;
+}
+
+.dashboard-stats {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 1.5%;
+    
+    color: rgb(255, 255, 255);
+}
+
+.stats-amount {
+    display: flex;
+}
+
+.stats-amount h1 {
+    flex: 1;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 6em;
+
+    color: rgb(255, 255, 255);
+}
+
+.stats-amount img {
+    flex: 1;
+    max-width: 50px;
+    text-align: right;
+}
+
+.stats-title {
+    font-family: 'Courier New';
+    font-size: 1.5em;
+
+    color: rgb(245, 245, 220);
+}
+
+.stats-earnings {
+    height: 250px;
+
+    border-radius: 15px;
+    background-color: rgb(95, 172, 207);
+
+    margin: 5px;
+    margin-top: 1.5%;
+    padding: 15px;
+
+
+}
+
+.stats-totals {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 1.5%;
+
+}
+
+.stats-total {
+    flex: 1;
+    
+    margin: 5px;
+    height: 250px;
+
+    border-radius: 15px;
+
+    background-color: rgb(233, 128, 128);
+}
+
+
+
+@media (max-width: 1400px) {
+    .dashboard-stats {
+        flex-direction: column;
+    }
 }

@@ -10,9 +10,9 @@
     bottom: 0;
     width: 100%;
     
-    background-color: #141414;
+    background-color: rgb(20, 20, 20);
 
-    color: #f0f8ff;
+    color: rgb(240, 248, 255);
 }
 
 .footer-sections {
@@ -24,14 +24,14 @@
 
     padding: 50px;
 
-    border: dashed 5px #f0f8ff;
+    border: dashed 5px rgb(240, 248, 255);
     border-radius: 5px;
 }
 
 .footer-title {
     flex: 1;
 
-    border-right: solid 1px #ffffff;
+    border-right: solid 1px rgb(255, 255, 255);
     
     justify-content: center;
     
@@ -67,7 +67,7 @@
     font-family: 'Baloo Bhaijaan 2', cursive;
     font-size: 1.25em;
 
-    color: aliceblue;
+    color: rgb(240, 248, 255);
 
     text-indent: 10px;
 

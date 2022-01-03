@@ -40,10 +40,10 @@
 
     margin-top: 5%;
 
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-family: 'Titan One', cursive;
     
-    text-shadow: 0 0 20px #fffb00;
+    text-shadow: 0 0 20px rgb(255, 251, 0);
     text-align: center;
 
 
@@ -67,14 +67,14 @@
     height: 50px;
     margin-bottom: 20px;
     
-    background-color: #e0e0e03F;
+    background-color: rgba(224, 224, 224, 0.247);
     
     border: none;
     border-radius: 20px;
 
-    border-bottom: solid 5px #8a2be2;
+    border-bottom: solid 5px rgb(138, 43, 226);
     
-    color: #cecece;
+    color: rgb(206, 206, 206);
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5em;
 
@@ -82,7 +82,7 @@
 }
 
 .auth-box form input:focus {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .auth-box form input:hover {
@@ -94,7 +94,7 @@
     
     margin-bottom: 50px;
     
-    background-color: #cecece;
+    background-color: rgb(206, 206, 206);
     border: none;
 
     border-radius: 5px;
@@ -103,7 +103,7 @@
     padding-top: 0;
     padding-bottom: 0;
 
-    color: #4b4b4b;
+    color: rgb(75, 75, 75);
     
     font-family: 'Bebas Neue', cursive;
     font-size: 2.5em;
@@ -113,14 +113,14 @@
     transition: 500ms;
     transform: scale(1.1);
 
-    background-color: #faebd7;
+    background-color: rgb(250, 235, 215);
 
     cursor: pointer;
     
 }
 
 .auth-box form a {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 
     text-decoration: underline;
     font-family: 'Nanum Gothic Coding', monospace;

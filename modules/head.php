@@ -30,5 +30,5 @@ $web_name = "ulan";
 
     ?>
 
-    <link rel="icon" type="image/x-icon" href="resources/favicon.png??<?=time()?>">
+    <link rel="icon" type="image/x-icon" href="../resources/favicon.png??<?=time()?>">
 </head>

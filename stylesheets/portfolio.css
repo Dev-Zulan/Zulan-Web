@@ -31,7 +31,7 @@
 .portfolio-items div {
     transition: 500ms;
 
-    background-color: #7c165e;
+    background-color: rgb(124, 22, 94);
     
     width: 400px;
     height: 275px;
@@ -53,7 +53,7 @@
 
     text-align: center;
     font-family: 'Bebas Neue', cursive;
-    color: #f0f8ff;
+    color: rgb(240, 248, 255);
 }
 
 .portfolio-items div:hover {
@@ -62,10 +62,10 @@
     transition: 500ms;
     transform: scale(1.1);
 
-    box-shadow: 0 10px 30px #000000;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
     border-radius: 5px;
 
-    color: #e5d5c0;
+    color: rgb(229, 213, 192);
 }
 
 @media (max-width: 609px) {

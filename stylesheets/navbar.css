@@ -6,13 +6,13 @@
     display: flex;
     flex-direction: column;
     
-    background-color: #474747;
+    background-color: rgb(71, 71, 71);
 }
 
 .nav-title {
     flex: 1;
     
-    background-color: #202020;
+    background-color: rgb(32, 32, 32);
 
     text-align: center;
 }
@@ -34,15 +34,15 @@
     font-size: 3.5em;
     letter-spacing: 0.2em;
 
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 
-    text-shadow: -5px 0 5px #080808;
+    text-shadow: -5px 0 5px rgb(8, 8, 8);
 
 }
 
 .nav-title h1 a:hover {
     transition: 500ms;
-    color: #e755c3;
+    color: rgb(231, 85, 195);
     
     letter-spacing: 0.3em;
 }
@@ -50,7 +50,7 @@
 .nav-pages {
     flex: 1;
     
-    color: #8de669;
+    color: rgb(141, 230, 105);
 
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.9em;
@@ -88,7 +88,7 @@
 }
 
 .nav-pages ul li a {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 @media (max-width: 609px) {

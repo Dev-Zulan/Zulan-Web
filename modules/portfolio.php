@@ -33,6 +33,7 @@ $Portfolio[] = new Portfolio("Mobile Dev", "../resources/portfolio-3.jpeg", "por
 $Portfolio[] = new Portfolio("Web-Design", "../resources/portfolio-4.jpeg", "portfolio-4");
 $Portfolio[] = new Portfolio("GitHub", "../resources/portfolio-5.jpeg", "portfolio-5");
 $Portfolio[] = new Portfolio("Resume", "../resources/portfolio-6.jpeg", "portfolio-6");
+
 ?>
 
 <div class="portfolio-section">
@@ -46,10 +47,10 @@ $Portfolio[] = new Portfolio("Resume", "../resources/portfolio-6.jpeg", "portfol
 </div>
 
 <script>
-    var gitHub = document.getElementById('portfolio-5');
+    var gitHub = document.getElementById('portfolio-5')
 
-    gitHub.style.cursor = 'pointer';
+    gitHub.style.cursor = 'pointer'
     gitHub.onclick = function() {
-        window.open('https://github.com/Dev-Zulan/', '_blank');
+        window.open('https://github.com/Dev-Zulan/', '_blank')
     };
 </script>

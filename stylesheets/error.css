@@ -1,7 +1,7 @@
 .error-container {
     display: block;
     
-    background-color: #0000002f;
+    background-color: rgba(0, 0, 0, 0.184);
 
     position: fixed;
     
@@ -10,7 +10,7 @@
 }
 
 .error-box {
-    background-color: #000000e7;
+    background-color: rgba(0, 0, 0, 0.906);
 
     position: fixed;
 
@@ -24,7 +24,7 @@
     
     justify-content: center;
 
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -33,7 +33,7 @@
     margin-right: 5%;
     margin-left: 5%;
     
-    border-bottom: dashed 2px #f0f8ff;
+    border-bottom: dashed 2px rgb(240, 248, 255);
 
     padding-bottom: 20px;
 
