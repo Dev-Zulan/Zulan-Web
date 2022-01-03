@@ -1,9 +1,9 @@
 <?php
 
-$SQL_HOST = getenv('SQL_HOST');
-$SQL_USER = getenv('SQL_USER');
-$SQL_PASSWORD = getenv('SQL_PASSWORD');
-$SQL_DATABASE = getenv('SQL_DATABASE');
+$SQL_HOST = getenv('SQL_HOST', true);
+$SQL_USER = getenv('SQL_USER', true);
+$SQL_PASSWORD = getenv('SQL_PASSWORD', true);
+$SQL_DATABASE = getenv('SQL_DATABASE', true);
 
 echo $SQL_HOST . '<br />';
 echo $SQL_USER . '<br />';
