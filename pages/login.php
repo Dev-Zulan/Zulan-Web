@@ -17,7 +17,7 @@ if(isset($_POST['user_login'])) {
 
     $SQL_Result = NULL;
 
-    $SQL_Statement = $SQL_Handle->prepare("SELECT `user_id`, `user_password` FROM `users` WHERE `user_name`=?");
+    $SQL_Statement = $SQL_Handle->prepare("SELECT user_id, user_password FROM users WHERE user_name=?");
     $SQL_Statement->bind_param('s', $_POST['login_name']);
     $SQL_Statement->execute();
 

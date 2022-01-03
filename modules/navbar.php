@@ -75,7 +75,7 @@ if(isset($_SESSION['user_id'])) {
     
     $SQL_Result = NULL;
 
-    $SQL_Statement = $SQL_Handle->prepare("SELECT `user_id` FROM `admins` WHERE `user_id`=?");
+    $SQL_Statement = $SQL_Handle->prepare("SELECT user_id FROM admins WHERE user_id=?");
     $SQL_Statement->bind_param('d', $_SESSION['user_id']);
     $SQL_Statement->execute();
 
