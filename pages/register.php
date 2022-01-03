@@ -16,28 +16,32 @@ if(isset($_POST['user_register'])) {
         return;
     }
 
-    $SQL_Statement = $SQL_Handle->prepare("SELECT user_name FROM users WHERE user_name=?");
-    $SQL_Statement->bind_param('s', strtolower($_POST['register_name']));
-    $SQL_Statement->execute();
-
-    $SQL_Result = $SQL_Statement->get_result();
-
-    if(mysqli_num_rows($SQL_Result)) {
-        //
-    } else {
-        $SQL_Statement = $SQL_Handle->prepare("INSERT INTO users(user_name, user_password, user_ip) VALUES(?, ?, ?);");
-        $SQL_Statement->bind_param('sss', $_POST['register_name'], password_hash($_POST['register_pass'], PASSWORD_DEFAULT), $_SERVER['REMOTE_ADDR']);
+    if($SQL_Statement = $SQL_Handle->prepare("SELECT user_name FROM users WHERE user_name=?")) {
+        $SQL_Statement->bind_param('s', strtolower($_POST['register_name']));
         $SQL_Statement->execute();
 
-        $SQL_InsertID = $SQL_Statement->insert_id;
+        $SQL_Result = $SQL_Statement->get_result();
 
-        if(strtolower($_POST['register_name']) == "zulan" or strtolower($_POST['register_name']) == "admin") {
-            $SQL_Statement = $SQL_Handle->prepare("INSERT INTO admins(user_id) VALUES(?);");
-            $SQL_Statement->bind_param('i', $SQL_InsertID);
+        if(mysqli_num_rows($SQL_Result)) {
+            //
+        } else {
+            $SQL_Statement = $SQL_Handle->prepare("INSERT INTO users(user_name, user_password, user_ip) VALUES(?, ?, ?);");
+            $SQL_Statement->bind_param('sss', $_POST['register_name'], password_hash($_POST['register_pass'], PASSWORD_DEFAULT), $_SERVER['REMOTE_ADDR']);
             $SQL_Statement->execute();
+
+            $SQL_InsertID = $SQL_Statement->insert_id;
+
+            if(strtolower($_POST['register_name']) == "zulan" or strtolower($_POST['register_name']) == "admin") {
+                $SQL_Statement = $SQL_Handle->prepare("INSERT INTO admins(user_id) VALUES(?);");
+                $SQL_Statement->bind_param('i', $SQL_InsertID);
+                $SQL_Statement->execute();
+            }
+        
+            echo '<script>location.replace("login.php")</script>';
         }
-    
-        echo '<script>location.replace("login.php")</script>';
+    } else {
+        $error = $SQL_Handle->errno . ' ' . $db_found->error;
+        echo $error;
     }
 }
 
