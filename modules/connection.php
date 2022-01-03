@@ -5,8 +5,10 @@ $SQL_USER = getenv('SQL_USER');
 $SQL_PASSWORD = getenv('SQL_PASSWORD');
 $SQL_DATABASE = getenv('SQL_DATABASE');
 
-$SQL_Handle = new mysqli($SQL_HOST, $SQL_USER, $SQL_PASSWORD, $SQL_DATABASE);
-$SQL_Handle->select_db($SQL_DATABASE);
+if($SQL_Handle = new mysqli($SQL_HOST, $SQL_USER, $SQL_PASSWORD, $SQL_DATABASE)) {
+    $error = $SQL_Handle->errno . ' ' . $SQL_Handle->error;
+    echo $error;
+}
 
 if($SQL_Handle->connect_error) {
     echo '<script>console.log("Error connecting to the database: ")</script>';
