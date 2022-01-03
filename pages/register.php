@@ -40,7 +40,7 @@ if(isset($_POST['user_register'])) {
             echo '<script>location.replace("login.php")</script>';
         }
     } else {
-        $error = $SQL_Handle->errno . ' ' . $db_found->error;
+        $error = $SQL_Handle->errno . ' ' . $SQL_Handle->error;
         echo $error;
     }
 }
