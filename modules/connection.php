@@ -15,3 +15,4 @@ if($SQL_Handle->connect_error) {
     echo '<script>console.log("Connected to MySQL Database!")</script>';
 }
 
+$SQL_Handle->query('USE ' . $SQL_DATABASE . ';');
