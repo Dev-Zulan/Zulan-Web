@@ -6,6 +6,7 @@ $SQL_PASSWORD = getenv('SQL_PASSWORD');
 $SQL_DATABASE = getenv('SQL_DATABASE');
 
 $SQL_Handle = new mysqli($SQL_HOST, $SQL_USER, $SQL_PASSWORD, $SQL_DATABASE);
+$SQL_Handle->select_db($SQL_DATABASE);
 
 if($SQL_Handle->connect_error) {
     echo '<script>console.log("Error connecting to the database: ")</script>';
@@ -14,5 +15,3 @@ if($SQL_Handle->connect_error) {
 } else {
     echo '<script>console.log("Connected to MySQL Database!")</script>';
 }
-
-$SQL_Handle->query('USE ' . $SQL_DATABASE . ';');
