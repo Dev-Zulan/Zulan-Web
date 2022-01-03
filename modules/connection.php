@@ -1,11 +1,11 @@
 <?php
 
-define("SQL_HOST", getenv('SQL_HOST'));
-define("SQL_USER", getenv('SQL_USER'));
-define("SQL_PASSWORD", getenv('SQL_PASSWORD'));
-define("SQL_DATABASE", getenv('SQL_DATABASE'));
+$SQL_HOST = getenv('SQL_HOST');
+$SQL_USER = getenv('SQL_USER');
+$SQL_PASSWORD = getenv('SQL_PASSWORD');
+$SQL_DATABASE = getenv('SQL_DATABASE');
 
-$SQL_Handle = new mysqli(SQL_HOST, SQL_USER, SQL_PASSWORD, SQL_DATABASE);
+$SQL_Handle = new mysqli($SQL_HOST, $SQL_USER, $SQL_PASSWORD, $SQL_DATABASE);
 
 if($SQL_Handle->connect_error) {
     echo '<script>console.log("Error connecting to the database: ")</script>';
