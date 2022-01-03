@@ -6,6 +6,8 @@ $SQL_PASSWORD = getenv('SQL_PASSWORD');
 $SQL_DATABASE = getenv('SQL_DATABASE');
 
 if($SQL_Handle = new mysqli($SQL_HOST, $SQL_USER, $SQL_PASSWORD, $SQL_DATABASE)) {
+    echo 'success';
+} else {
     $error = $SQL_Handle->errno . ' ' . $SQL_Handle->error;
     echo $error;
 }
