@@ -2,8 +2,6 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
-SetEnv REDIRECT_ENV "development"
-
 # DISABLE CACHING
 <IfModule mod_headers.c>
     Header set Cache-Control "no-cache, no-store, must-revalidate"

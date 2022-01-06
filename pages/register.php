@@ -4,6 +4,7 @@ session_start();
 
 include('../modules/authentication.php');
 include('../modules/connection.php');
+include('../modules/auitlog.php');
 
 if(isset($_SESSION['user_id'])) {
     echo '<script>location.replace("../index.php")</script>';
@@ -31,10 +32,14 @@ if(isset($_POST['user_register'])) {
 
         $SQL_InsertID = $SQL_Statement->insert_id;
 
+        audit_log($SQL_Handle, "Authentication", "User [" . $_POST['register_name'] . "] registered with IP: [" . $_SERVER['REMOTE_ADDR'] . "]");
+
         if(strtolower($_POST['register_name']) == "zulan" or strtolower($_POST['register_name']) == "admin") {
             $SQL_Statement = $SQL_Handle->prepare("INSERT INTO admins(user_id) VALUES(?);");
             $SQL_Statement->bind_param('i', $SQL_InsertID);
             $SQL_Statement->execute();
+
+            audit_log($SQL_Handle, "Authentication", "Admin [" . $_POST['register_name'] . "] registered with IP: [" . $_SERVER['REMOTE_ADDR'] . "]");
         }
     
         echo '<script>location.replace("login.php")</script>';

@@ -2,6 +2,8 @@
 
 session_start();
 
+include("connection.php");
+
 if(!isset($_SESSION['user_id'])) {
     echo '<script>location.replace("../index.php")</script>';
     return;
@@ -31,6 +33,7 @@ $AdminBar[] = new AdminBar("Messages", "adminbar-messages");
 $AdminBar[] = new AdminBar("Website Settings", "adminbar-settings");
 $AdminBar[] = new AdminBar("Edit User", "adminbar-edituser");
 $AdminBar[] = new AdminBar("Resources", "adminbar-resources");
+$AdminBar[] = new AdminBar("Audit Log", "adminbar-auditlog");
 
 $dashboard_stats[] = array(1000, "ACTIVE USERS", "rgb(212, 118, 118)");
 $dashboard_stats[] = array(500, "CURRENT CUSTOMERS", "rgb(82, 189, 60)");
@@ -53,7 +56,7 @@ $dashboard_stats[] = array(1000, "ACTIVE INQUIRIES", "rgb(131, 60, 189)");
                     <?php
                     
                     foreach($AdminBar as $x => $i) {
-                        echo '<li id="' . $AdminBar[$x]->get_id() . '">' . $AdminBar[$x]->get_item() . '</li>';
+                        echo '<a href="?admin-sidebar=' . strtolower($AdminBar[$x]->get_id()) . '"><li id="' . $AdminBar[$x]->get_id() . '">' . $AdminBar[$x]->get_item() . '</li></a>';
                     }
                     
                     ?>
@@ -62,7 +65,7 @@ $dashboard_stats[] = array(1000, "ACTIVE INQUIRIES", "rgb(131, 60, 189)");
             <div class="admin-canvas">
                 <div class="admin-canvas-inner">
                     <div class="admin-canvas-item" style="display: block;">
-                        <h1>Admin Dashboard</h1>
+                        <h1>Admin Dashboard - Under Construction</h1>
                         <div class="dashboard-stats">
                             <?php
 
@@ -85,16 +88,34 @@ $dashboard_stats[] = array(1000, "ACTIVE INQUIRIES", "rgb(131, 60, 189)");
                         </div>
                     </div>
                     <div class="admin-canvas-item" style="display: none;">
-                        <h1>MESSAGES</h1>
+                        <h1>Messages - Under Construction</h1>
+                        <div class="user-message">
+                            <p id="user-message-name">Name: Test</p>
+                            <p id="user-message-overview">Message overview...</p>
+                        </div>
                     </div>
                     <div class="admin-canvas-item" style="display: none;">
-                        <h1>SETTINGS</h1>
+                        <h1>SETTINGS - Under Construction</h1>
                     </div>
                     <div class="admin-canvas-item" style="display: none;">
-                        <h1>EDITUSER</h1>
+                        <h1>EDITUSER - Under Construction</h1>
                     </div>
                     <div class="admin-canvas-item" style="display: none;">
-                        <h1>RESOURCES</h1>
+                        <h1>RESOURCES - Under Construction</h1>
+                    </div>
+                    <div class="admin-canvas-item" style="display: none;">
+                        <h1>Audit Log</h1>
+                        <?php
+
+                        $SQL_Result = $SQL_Handle->query("SELECT * FROM auditlog");
+                        while($SQL_Row = $SQL_Result->fetch_array()) {
+                            echo '<div class="audit-log">';
+                            echo '<p id="audit-log-name">' . $SQL_Row[1] . '</p>';
+                            echo '<p id="audit-log-overview">' . $SQL_Row[2] . '</p>';
+                            echo '<p id="audit-log-date">' . $SQL_Row[3] . '</p>';
+                            echo '</div>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -105,43 +126,18 @@ $dashboard_stats[] = array(1000, "ACTIVE INQUIRIES", "rgb(131, 60, 189)");
 </body>
 </html>
 
-<script>
-    var admin_sidebar = [
-        document.getElementById("adminbar-dashboard"),
-        document.getElementById("adminbar-messages"),
-        document.getElementById("adminbar-settings"),
-        document.getElementById("adminbar-edituser"),
-        document.getElementById("adminbar-resources"),
-    ]
+<?php
 
-    var admin_canvas = document.getElementsByClassName("admin-canvas-item")
-    var active_bar = 0
+if(isset($_GET['admin-sidebar'])) {
+    $activebar = 0;
+    echo '<script>var admin_canvas = document.getElementsByClassName("admin-canvas-item")</script>';
+    echo 'test';
     
-    admin_sidebar[0].onclick = function() {
-        admin_canvas[active_bar].style.display = "none"
-        active_bar = 0
-        admin_canvas[0].style.display = "block"
+    foreach($AdminBar as $x => $i) {
+        if($_GET['admin-sidebar'] == strtolower($AdminBar[$x]->get_id())) {
+            echo '<script>admin_canvas[' . $activebar .'].style.display="none"</script>';
+            $activebar = $x;
+            echo '<script>admin_canvas[' . $activebar .'].style.display="block"</script>';
+        }
     }
-    admin_sidebar[1].onclick = function() {
-        admin_canvas[active_bar].style.display = "none"
-        active_bar = 1
-        admin_canvas[1].style.display = "block"
-    }
-    admin_sidebar[2].onclick = function() {
-        admin_canvas[active_bar].style.display = "none"
-        active_bar = 2
-        admin_canvas[2].style.display = "block"
-    }
-    admin_sidebar[3].onclick = function() {
-        admin_canvas[active_bar].style.display = "none"
-        active_bar = 3
-        admin_canvas[3].style.display = "block"
-    }
-    admin_sidebar[4].onclick = function() {
-        admin_canvas[active_bar].style.display = "none"
-        active_bar = 4
-        admin_canvas[4].style.display = "block"
-    }
-
-    
-</script>
+}

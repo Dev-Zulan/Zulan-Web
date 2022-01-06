@@ -69,6 +69,10 @@
     cursor: pointer;
 }
 
+.admin-canvas h1 {
+    margin-bottom: 25px;
+}
+
 
 
 
@@ -159,6 +163,68 @@
     border-radius: 15px;
 
     background-color: rgb(233, 128, 128);
+}
+
+
+
+
+
+
+
+
+
+.user-message {
+    display: flex;
+    
+    height: 50px;
+    background-color: rgb(38, 163, 121);
+
+    border: black solid 2px;
+    border-radius: 15px;
+
+    padding: 15px;
+    margin-top: 25px;
+}
+
+#user-message-name {
+    flex: 1;
+    border-right: rgb(0, 0, 0), solid, ;
+}
+
+#user-message-overview {
+    flex: 4;
+}
+
+
+
+
+
+.audit-log {
+    display: flex;
+    
+    height: 50px;
+    background-color: rgb(38, 163, 121);
+
+    border: black solid 2px;
+    border-radius: 15px;
+
+    padding: 15px;
+    margin-top: 10px;
+}
+
+#audit-log-name {
+    flex: 1;
+    border-right: rgb(0, 0, 0), solid, ;
+}
+
+#audit-log-overview {
+    flex: 4;
+    color: white;
+    font-weight: bold;
+}
+
+#audit-log-date {
+    flex: 1;
 }
 
 

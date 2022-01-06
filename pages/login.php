@@ -3,6 +3,7 @@ session_start();
 
 include('../modules/authentication.php');
 include('../modules/connection.php');
+include('../modules/auitlog.php');
 
 if(isset($_SESSION['user_id'])) {
     echo '<script>location.replace("../index.php")</script>';
@@ -28,6 +29,7 @@ if(isset($_POST['user_login'])) {
         
         if(password_verify($_POST['login_pass'], $SQL_Row['user_password'])) {
             $_SESSION['user_id'] = $SQL_Row['user_id'];
+            audit_log($SQL_Handle, "Authentication", "User [" . $_POST['login_name'] . "] logged in with IP: [" . $_SERVER['REMOTE_ADDR'] . "]");
             echo '<script>location.replace("../index.php")</script>';
         } else {
             echo '<script>location.replace("login.php")</script>';
