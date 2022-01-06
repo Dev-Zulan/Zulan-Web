@@ -131,7 +131,6 @@ $dashboard_stats[] = array(1000, "ACTIVE INQUIRIES", "rgb(131, 60, 189)");
 if(isset($_GET['admin-sidebar'])) {
     $activebar = 0;
     echo '<script>var admin_canvas = document.getElementsByClassName("admin-canvas-item")</script>';
-    echo 'test';
     
     foreach($AdminBar as $x => $i) {
         if($_GET['admin-sidebar'] == strtolower($AdminBar[$x]->get_id())) {
