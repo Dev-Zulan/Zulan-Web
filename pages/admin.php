@@ -2,7 +2,7 @@
 
 session_start();
 
-include("connection.php");
+include("../modules/connection.php");
 
 if(!isset($_SESSION['user_id'])) {
     echo '<script>location.replace("../index.php")</script>';
