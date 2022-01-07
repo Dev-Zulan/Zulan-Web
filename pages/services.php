@@ -10,7 +10,7 @@ session_start();
 <body>
     <?php include('../modules/navbar.php'); ?>
 
-    
+    <h1>UNDER CONSTRUCTION</h1>
 
     <?php include('../modules/footer.php'); ?>
 </body>

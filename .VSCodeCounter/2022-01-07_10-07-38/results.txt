@@ -1,0 +1,56 @@
+Date : 2022-01-07 10:07:38
+Directory : /home/zulan/Desktop/zulan-web
+Total : 27 files,  1258 codes, 3 comments, 462 blanks, all 1723 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| PHP      |         16 |        630 |          3 |        165 |        798 |
+| CSS      |         10 |        622 |          0 |        294 |        916 |
+| Markdown |          1 |          6 |          0 |          3 |          9 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                         | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                            |         27 |      1,258 |          3 |        462 |      1,723 |
+| modules                                                      |          8 |        252 |          0 |         61 |        313 |
+| pages                                                        |          7 |        362 |          3 |         97 |        462 |
+| stylesheets                                                  |          9 |        593 |          0 |        284 |        877 |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                     | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/zulan/Desktop/zulan-web/README.md                      | Markdown |          6 |          0 |          3 |          9 |
+| /home/zulan/Desktop/zulan-web/index.php                      | PHP      |         16 |          0 |          7 |         23 |
+| /home/zulan/Desktop/zulan-web/modules/aboutme.php            | PHP      |         36 |          0 |         10 |         46 |
+| /home/zulan/Desktop/zulan-web/modules/auitlog.php            | PHP      |          6 |          0 |          1 |          7 |
+| /home/zulan/Desktop/zulan-web/modules/authentication.php     | PHP      |         23 |          0 |          5 |         28 |
+| /home/zulan/Desktop/zulan-web/modules/connection.php         | PHP      |         13 |          0 |          3 |         16 |
+| /home/zulan/Desktop/zulan-web/modules/footer.php             | PHP      |         30 |          0 |          0 |         30 |
+| /home/zulan/Desktop/zulan-web/modules/head.php               | PHP      |         22 |          0 |         12 |         34 |
+| /home/zulan/Desktop/zulan-web/modules/navbar.php             | PHP      |         77 |          0 |         19 |         96 |
+| /home/zulan/Desktop/zulan-web/modules/portfolio.php          | PHP      |         45 |          0 |         11 |         56 |
+| /home/zulan/Desktop/zulan-web/pages/admin.php                | PHP      |        121 |          0 |         23 |        144 |
+| /home/zulan/Desktop/zulan-web/pages/contacts.php             | PHP      |         11 |          0 |          6 |         17 |
+| /home/zulan/Desktop/zulan-web/pages/login.php                | PHP      |         60 |          1 |         18 |         79 |
+| /home/zulan/Desktop/zulan-web/pages/logout.php               | PHP      |         11 |          0 |          4 |         15 |
+| /home/zulan/Desktop/zulan-web/pages/register.php             | PHP      |         65 |          2 |         22 |         89 |
+| /home/zulan/Desktop/zulan-web/pages/services.php             | PHP      |         11 |          0 |          6 |         17 |
+| /home/zulan/Desktop/zulan-web/pages/user.php                 | PHP      |         83 |          0 |         18 |        101 |
+| /home/zulan/Desktop/zulan-web/style.css                      | CSS      |         29 |          0 |         10 |         39 |
+| /home/zulan/Desktop/zulan-web/stylesheets/aboutme.css        | CSS      |         60 |          0 |         19 |         79 |
+| /home/zulan/Desktop/zulan-web/stylesheets/admin.css          | CSS      |        149 |          0 |         87 |        236 |
+| /home/zulan/Desktop/zulan-web/stylesheets/authentication.css | CSS      |         84 |          0 |         43 |        127 |
+| /home/zulan/Desktop/zulan-web/stylesheets/error.css          | CSS      |         29 |          0 |         16 |         45 |
+| /home/zulan/Desktop/zulan-web/stylesheets/footer.css         | CSS      |         76 |          0 |         33 |        109 |
+| /home/zulan/Desktop/zulan-web/stylesheets/navbar.css         | CSS      |         95 |          0 |         35 |        130 |
+| /home/zulan/Desktop/zulan-web/stylesheets/portfolio.css      | CSS      |         54 |          0 |         28 |         82 |
+| /home/zulan/Desktop/zulan-web/stylesheets/services.css       | CSS      |          0 |          0 |          1 |          1 |
+| /home/zulan/Desktop/zulan-web/stylesheets/user.css           | CSS      |         46 |          0 |         22 |         68 |
+| Total                                                        |          |      1,258 |          3 |        462 |      1,723 |
++--------------------------------------------------------------+----------+------------+------------+------------+------------+

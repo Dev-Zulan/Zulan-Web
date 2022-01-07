@@ -2,7 +2,7 @@
 
 session_start();
 
-include("../modules/connection.php");
+include('../modules/connection.php');
 
 if(!isset($_SESSION['user_id'])) {
     echo '<script>location.replace("../index.php")</script>';
@@ -107,13 +107,14 @@ $dashboard_stats[] = array(1000, "ACTIVE INQUIRIES", "rgb(131, 60, 189)");
                         <h1>Audit Log</h1>
                         <?php
 
-                        $SQL_Result = $SQL_Handle->query("SELECT * FROM auditlog");
+                        $SQL_Result = $SQL_Handle->query("SELECT * FROM auditlog ORDER by auditlog_id DESC");
                         while($SQL_Row = $SQL_Result->fetch_array()) {
-                            echo '<div class="audit-log">';
-                            echo '<p id="audit-log-name">' . $SQL_Row[1] . '</p>';
-                            echo '<p id="audit-log-overview">' . $SQL_Row[2] . '</p>';
-                            echo '<p id="audit-log-date">' . $SQL_Row[3] . '</p>';
-                            echo '</div>';
+                            echo
+                            '<div class="audit-log">' .
+                                '<p id="audit-log-name">' . $SQL_Row[1] . '</p>' .
+                                '<p id="audit-log-overview">' . $SQL_Row[2] . '</p>' .
+                                '<p id="audit-log-date">' . $SQL_Row[3] . '</p>' .
+                            '</div>';
                         }
                         ?>
                     </div>

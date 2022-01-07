@@ -202,7 +202,6 @@
 .audit-log {
     display: flex;
     
-    height: 50px;
     background-color: rgb(38, 163, 121);
 
     border: black solid 2px;
@@ -228,9 +227,34 @@
 }
 
 
+@media (max-width: 970px) {
+    .admin-inner {
+        flex-direction: column;
+        font-size: 0.8em;
+
+        text-align: center;
+    }
+
+    .admin-sidebar {
+        border: none;
+    }
+
+    .admin-sidebar ul {
+        margin-top: 0;
+    }
+    
+    .audit-log {
+        flex-direction: column;
+    }
+
+    .dashboard-stats {
+        text-align: left;
+    }
+}
 
 @media (max-width: 1400px) {
     .dashboard-stats {
         flex-direction: column;
     }
 }
+
