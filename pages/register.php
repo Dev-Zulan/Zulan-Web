@@ -13,7 +13,7 @@ if(isset($_SESSION['user_id'])) {
 
 if(isset($_POST['user_register'])) {
     if(!validate_credentials(REGISTER)) {
-        // wrong input
+        echo '<script>location.replace("register.php")</script>';
         return;
     }
 
