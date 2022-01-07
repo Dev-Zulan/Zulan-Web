@@ -36,16 +36,31 @@ $UserBar[] = new UserBar("Logout", "user-logout");
 
 if(isset($_POST['user_save_details'])) {
     if($_POST['user_fname']) {
+        if(preg_match('/^[A-Za-z][A-Za-z0-9]{5,31}$/', $_POST['register_name'])) {
+            echo '<script>location.replace("user.php")</script>';
+            return;
+        }
+
         $SQL_Statement = $SQL_Handle->prepare("UPDATE users SET user_fname=? WHERE user_id=?;");
         $SQL_Statement->bind_param('si', $_POST['user_fname'], $_SESSION['user_id']);
         $SQL_Statement->execute();
     }
     if($_POST['user_lname']) {
+        if(preg_match('/^[A-Za-z][A-Za-z0-9]{5,31}$/', $_POST['register_name'])) {
+            echo '<script>location.replace("user.php")</script>';
+            return;
+        }
+
         $SQL_Statement = $SQL_Handle->prepare("UPDATE users SET user_lname=? WHERE user_id=?;");
         $SQL_Statement->bind_param('si', $_POST['user_lname'], $_SESSION['user_id']);
         $SQL_Statement->execute();
     }
     if($_POST['user_email']) {
+        if(!filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)) {
+            echo '<script>location.replace("user.php")</script>';
+            return;
+        }
+        
         $SQL_Statement = $SQL_Handle->prepare("UPDATE users SET user_email=? WHERE user_id=?;");
         $SQL_Statement->bind_param('si', $_POST['user_email'], $_SESSION['user_id']);
         $SQL_Statement->execute();
